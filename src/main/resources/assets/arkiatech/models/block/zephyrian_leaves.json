@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "arkiatech:blocks/leaves_zephyrian"
+    }
+}

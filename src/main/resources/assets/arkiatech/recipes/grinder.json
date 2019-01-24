@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "sfs",
+        "fmf",
+        "idi"
+    ],
+    "key":
+    {
+        "s":
+        {
+            "item": "arkiatech:zephyr_stable"
+        },
+        "m":
+        {
+            "item": "arkiatech:machine_frame"
+        },
+        "f":
+        {
+            "item": "minecraft:flint"
+        },
+        "d":
+        {
+            "item": "minecraft:diamond"
+        },
+        "i":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:grinder",
+        "count": 1
+    }
+}

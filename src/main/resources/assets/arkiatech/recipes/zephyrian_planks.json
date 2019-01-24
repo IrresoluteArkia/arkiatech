@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "arkiatech:zephyrian_log"
+        }
+    ],
+    "result":
+    {
+        "item": "arkiatech:zephyrian_planks",
+        "count": 4
+    }
+}

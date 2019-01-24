@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "iii",
+        "iii",
+        "iii"
+    ],
+    "key":
+    {
+        "i":
+        {
+            "item": "arkiatech:up_gold"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:up_gold_block",
+        "count": 1
+    }
+}

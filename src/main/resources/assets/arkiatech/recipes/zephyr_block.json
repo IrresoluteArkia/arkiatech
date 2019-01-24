@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "iii",
+        "iii",
+        "iii"
+    ],
+    "key":
+    {
+        "i":
+        {
+            "item": "arkiatech:zephyr_ingot"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:zephyr_block",
+        "count": 1
+    }
+}

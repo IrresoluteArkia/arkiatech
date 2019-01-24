@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "zzz",
+        "zlz",
+        "zzz"
+    ],
+    "key":
+    {
+        "z":
+        {
+            "item": "arkiatech:zephyrian_drift"
+        },
+        "l":
+        {
+            "item": "arkiatech:zephyrian_log"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:zephyr_stable",
+        "count": 1
+    }
+}

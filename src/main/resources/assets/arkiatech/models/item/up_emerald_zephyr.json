@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "arkiatech:items/up_emerald",
+        "layer1": "arkiatech:items/zephyr_gem_2_overlay"
+    }
+}

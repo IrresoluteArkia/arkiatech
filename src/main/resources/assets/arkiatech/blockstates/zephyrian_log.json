@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "arkiatech:zephyrian_log" },
+        "axis=z":   { "model": "arkiatech:zephyrian_log", "x": 90 },
+        "axis=x":   { "model": "arkiatech:zephyrian_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "arkiatech:zephyrian_bark" }
+    }
+}

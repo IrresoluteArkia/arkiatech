@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "arkiatech:up_iron_block"
+        }
+    ],
+    "result":
+    {
+        "item": "arkiatech:up_iron",
+        "count": 9
+    }
+}

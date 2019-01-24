@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "arkiatech:co_zephyr_block"
+        }
+    ],
+    "result":
+    {
+        "item": "arkiatech:co_zephyr",
+        "count": 9
+    }
+}

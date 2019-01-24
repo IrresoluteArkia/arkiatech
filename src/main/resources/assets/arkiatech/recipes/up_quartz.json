@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "arkiatech:up_quartz_block"
+        }
+    ],
+    "result":
+    {
+        "item": "arkiatech:up_quartz",
+        "count": 9
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "machine_frame_reinforced",
+    "pattern":
+    [
+        "sis",
+        "grg",
+        "sis"
+    ],
+    "key":
+    {
+        "s":
+        {
+            "item": "arkiatech:zephyr_block"
+        },
+        "i":
+        {
+            "item": "minecraft:redstone"
+        },
+        "g":
+        {
+            "item": "arkiatech:zephyr_dust"
+        },
+        "r":
+        {
+            "item": "arkiatech:machine_frame"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:machine_frame_reinforced",
+        "count": 2
+    }
+}

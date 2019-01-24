@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "arkiatech:items/quartz_zephyr",
+        "layer1": "arkiatech:items/zephyr_crystal_overlay"
+    }
+}

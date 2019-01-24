@@ -1,0 +1,16 @@
+[
+{
+  "modid": "arkiatech",
+  "name": "Arkia's Technology",
+  "description": "A basic technology mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["IrresoluteArkia"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

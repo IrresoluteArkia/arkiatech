@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "arkiatech:blocks/up_diamond_block"
+    }
+}

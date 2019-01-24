@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "arkiatech:blocks/sapling_zephyrian"
+    }
+}

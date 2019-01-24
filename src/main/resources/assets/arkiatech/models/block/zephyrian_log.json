@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "arkiatech:blocks/log_zephyrian_top",
+        "side": "arkiatech:blocks/log_zephyrian"
+    }
+}

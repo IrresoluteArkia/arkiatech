@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": { "model": "arkiatech:zephyrian_leaves" },
+        "inventory": { "model": "arkiatech:zephyrian_leaves" },
+        "check_decay=true,decayable=true": { "model": "arkiatech:zephyrian_leaves" },
+        "check_decay=true,decayable=false": { "model": "arkiatech:zephyrian_leaves" },
+        "check_decay=false,decayable=true": { "model": "arkiatech:zephyrian_leaves" },
+        "check_decay=false,decayable=false": { "model": "arkiatech:zephyrian_leaves" }
+    }
+}

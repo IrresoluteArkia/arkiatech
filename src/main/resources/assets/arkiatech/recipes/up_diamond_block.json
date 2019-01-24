@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "iii",
+        "iii",
+        "iii"
+    ],
+    "key":
+    {
+        "i":
+        {
+            "item": "arkiatech:up_diamond"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:up_diamond_block",
+        "count": 1
+    }
+}

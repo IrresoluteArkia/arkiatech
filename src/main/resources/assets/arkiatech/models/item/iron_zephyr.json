@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "arkiatech:items/iron_zephyr",
+        "layer1": "arkiatech:items/zephyr_ingot_overlay"
+    }
+}
