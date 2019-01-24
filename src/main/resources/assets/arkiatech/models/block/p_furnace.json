@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "arkiatech:blocks/p_furnace_top",
+        "front": "arkiatech:blocks/p_furnace",
+        "side": "arkiatech:blocks/p_furnace_side"
+    }
+}
