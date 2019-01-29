@@ -1,6 +1,35 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "arkiatech:blocks/zephyr_block"
-    }
+        "particle": "arkiatech:blocks/zephyr_block_side",
+        "side": "arkiatech:blocks/zephyr_block_side",
+        "top": "arkiatech:blocks/zephyr_block_top",
+        "bottom": "arkiatech:blocks/zephyr_block_bottom"
+    },
+    "elements": [
+        {
+            "from": [0,0,0],
+            "to": [16,16,16],
+            "faces": {
+                "up": {
+                    "texture": "#top"
+                },
+                "down": {
+                    "texture": "#bottom"
+                },
+                "west": {
+                    "texture": "#side"
+                },
+                "east": {
+                    "texture": "#side"
+                },
+                "north": {
+                    "texture": "#side"
+                },
+                "south": {
+                    "texture": "#side"
+                }
+            }
+        }
+    ]
 }
