@@ -67,7 +67,7 @@ public class ATBlocks {
 		energyPipe = new ATEnergyPipe(Material.ROCK, "energy_pipe");
 		machineFrame = new ATBlockBase(Material.ROCK, "machine_frame");
 		reMachineFrame = new ATBlockBase(Material.ROCK, "machine_frame_reinforced");
-		zephyrBlock = new ATBlockBase(Material.ROCK, "zephyr_block");
+		zephyrBlock = new ATBlockBase(Material.ROCK, "zephyr_block").setRenderSeeThrough(true);
 		upIronBlock = new ATBlockBase(Material.ROCK, "up_iron_block");
 		upGoldBlock = new ATBlockBase(Material.ROCK, "up_gold_block");
 		upQuartzBlock = new ATBlockBase(Material.ROCK, "up_quartz_block");

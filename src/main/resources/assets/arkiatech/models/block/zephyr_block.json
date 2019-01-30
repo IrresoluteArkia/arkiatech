@@ -1,15 +1,18 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "particle": "arkiatech:blocks/zephyr_block_side",
-        "side": "arkiatech:blocks/zephyr_block_side",
-        "top": "arkiatech:blocks/zephyr_block_top",
-        "bottom": "arkiatech:blocks/zephyr_block_bottom"
+        "particle": "arkiatech:blocks/zephyr_block_side_base",
+        "side": "arkiatech:blocks/zephyr_block_side_base",
+        "top": "arkiatech:blocks/zephyr_block_base",
+        "bottom": "arkiatech:blocks/zephyr_block_base",
+        "side_over": "arkiatech:blocks/zephyr_block_side_overlay",
+        "top_over": "arkiatech:blocks/zephyr_block_top_overlay",
+        "bottom_over": "arkiatech:blocks/zephyr_block_bottom_overlay"
     },
     "elements": [
         {
-            "from": [0,0,0],
-            "to": [16,16,16],
+            "from": [0.1,0.1,0.1],
+            "to": [15.9,15.9,15.9],
             "faces": {
                 "up": {
                     "texture": "#top"
@@ -28,6 +31,30 @@
                 },
                 "south": {
                     "texture": "#side"
+                }
+            }
+        },
+        {
+            "from": [0,0,0],
+            "to": [16,16,16],
+            "faces": {
+                "up": {
+                    "texture": "#top_over"
+                },
+                "down": {
+                    "texture": "#bottom_over"
+                },
+                "west": {
+                    "texture": "#side_over"
+                },
+                "east": {
+                    "texture": "#side_over"
+                },
+                "north": {
+                    "texture": "#side_over"
+                },
+                "south": {
+                    "texture": "#side_over"
                 }
             }
         }
