@@ -73,7 +73,7 @@ public class ATBlocks {
 		upQuartzBlock = new ATBlockBase(Material.ROCK, "up_quartz_block");
 		upDiamondBlock = new ATBlockBase(Material.ROCK, "up_diamond_block");
 		upEmeraldBlock = new ATBlockBase(Material.ROCK, "up_emerald_block");
-		coZephyrBlock = new ATBlockBase(Material.ROCK, "co_zephyr_block");
+		coZephyrBlock = new ATBlockBase(Material.ROCK, "co_zephyr_block").setRenderSeeThrough(true);
 		itemPipe = new ATItemAcceptor(Material.ROCK, "item_pipe");
 		itemSource = new ATItemSource(Material.ROCK, "item_source");
 //		itemAcceptor = new ATItemAcceptor(Material.ROCK, "item_acceptor");

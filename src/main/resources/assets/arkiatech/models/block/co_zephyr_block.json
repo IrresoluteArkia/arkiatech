@@ -1,6 +1,89 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "arkiatech:blocks/co_zephyr_block"
-    }
+        "particle": "arkiatech:blocks/zephyr_block_side_base",
+        "side": "arkiatech:blocks/zephyr_block_side_base",
+        "top": "arkiatech:blocks/zephyr_block_base",
+        "bottom": "arkiatech:blocks/zephyr_block_base",
+        "side_over": "arkiatech:blocks/zephyr_block_side_overlay",
+        "top_over": "arkiatech:blocks/zephyr_block_top_overlay",
+        "bottom_over": "arkiatech:blocks/zephyr_block_bottom_overlay",
+        "side_over_slow": "arkiatech:blocks/zephyr_block_side_overlay_slow",
+        "top_over_slow": "arkiatech:blocks/zephyr_block_top_overlay_slow",
+        "bottom_over_slow": "arkiatech:blocks/zephyr_block_bottom_overlay_slow"
+    },
+    "elements": [
+        {
+            "from": [0.2,0.2,0.2],
+            "to": [15.8,15.8,15.8],
+            "faces": {
+                "up": {
+                    "texture": "#top"
+                },
+                "down": {
+                    "texture": "#bottom"
+                },
+                "west": {
+                    "texture": "#side"
+                },
+                "east": {
+                    "texture": "#side"
+                },
+                "north": {
+                    "texture": "#side"
+                },
+                "south": {
+                    "texture": "#side"
+                }
+            }
+        },
+        {
+            "from": [0.1,0.1,0.1],
+            "to": [15.9,15.9,15.9],
+            "faces": {
+                "up": {
+                    "texture": "#top_over"
+                },
+                "down": {
+                    "texture": "#bottom_over"
+                },
+                "west": {
+                    "texture": "#side_over"
+                },
+                "east": {
+                    "texture": "#side_over"
+                },
+                "north": {
+                    "texture": "#side_over"
+                },
+                "south": {
+                    "texture": "#side_over"
+                }
+            }
+        },
+        {
+            "from": [0,0,0],
+            "to": [16,16,16],
+            "faces": {
+                "up": {
+                    "texture": "#top_over_slow"
+                },
+                "down": {
+                    "texture": "#bottom_over_slow"
+                },
+                "west": {
+                    "texture": "#side_over_slow"
+                },
+                "east": {
+                    "texture": "#side_over_slow"
+                },
+                "north": {
+                    "texture": "#side_over_slow"
+                },
+                "south": {
+                    "texture": "#side_over_slow"
+                }
+            }
+        }
+    ]
 }
