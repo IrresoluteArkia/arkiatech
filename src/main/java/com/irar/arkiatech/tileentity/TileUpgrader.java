@@ -80,7 +80,7 @@ public class TileUpgrader extends TileMachineBase{
 
 	@Override
 	public int getBaseEnergyUsedPerTick() {
-		return 80;
+		return ConfigInts.UPGRADER_ENERGY_USED.currentValue;
 	}
 
 	@Override
@@ -201,7 +201,7 @@ public class TileUpgrader extends TileMachineBase{
 
 	@Override
 	public int getBaseProcessingTime(int i) {
-		return 200;
+		return ConfigInts.UPGRADER_PROCESS_TIME.currentValue;
 	}
 
 
