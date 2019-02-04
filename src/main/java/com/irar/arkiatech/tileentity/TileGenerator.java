@@ -1,5 +1,7 @@
 package com.irar.arkiatech.tileentity;
 
+import com.irar.arkiatech.config.ConfigDoubles;
+import com.irar.arkiatech.config.ConfigInts;
 import com.irar.arkiatech.gui.container.ContainerGenerator;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +19,7 @@ public class TileGenerator extends TileMachineBase {
 	private int maxBurnTime = 1;
 
 	public TileGenerator() {
-		super(1, 100000, 0, 2048, ATTEGui.GENERATOR);
+		super(1, ConfigInts.MAX_GENERATOR_ENERGY.currentValue, 0, 2048, ATTEGui.GENERATOR);
 	}
 
 	@Override
@@ -82,7 +84,7 @@ public class TileGenerator extends TileMachineBase {
 		if(burnTime <= 0) {
 			ItemStack stack = this.getStackInSlot(0);
 			if(!stack.isEmpty() && this.storage.getEnergyStored() < this.storage.getMaxEnergyStored()) {
-				burnTime = TileEntityFurnace.getItemBurnTime(stack);
+				burnTime = getBurnTime(stack);
 				maxBurnTime = burnTime;
 				burnTime = getProcessingTime(0);
 				this.decrStackSize(0, 1);
@@ -100,12 +102,16 @@ public class TileGenerator extends TileMachineBase {
 
 	@Override
 	public int getBaseEnergyUsedPerTick() {
-		return -40;
+		return -ConfigInts.GENERATOR_ENERGY_PRODUCED.currentValue;
 	}
 
 	@Override
 	public int getBaseProcessingTime(int i) {
 		return maxBurnTime;
+	}
+
+	public int getBurnTime(ItemStack stack) {
+		return (int) Math.max(TileEntityFurnace.getItemBurnTime(stack) * ConfigDoubles.GENERATOR_BURN_TIME_MODIFIER.currentValue, 1);
 	}
 
 }

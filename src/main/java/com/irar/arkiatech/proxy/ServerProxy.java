@@ -2,6 +2,7 @@ package com.irar.arkiatech.proxy;
 
 import com.irar.arkiatech.ArkiaTech;
 import com.irar.arkiatech.block.ATLeaf;
+import com.irar.arkiatech.config.ATConfig;
 import com.irar.arkiatech.handlers.ATBlocks;
 import com.irar.arkiatech.handlers.ATCrafting;
 import com.irar.arkiatech.handlers.ATGuis;
@@ -31,6 +32,7 @@ public class ServerProxy implements IProxy{
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
+		new ATConfig(event.getSuggestedConfigurationFile());
 		final MainEventHandler handler = new MainEventHandler();
         MinecraftForge.EVENT_BUS.register((Object)handler);
 		

@@ -1,6 +1,7 @@
 package com.irar.arkiatech.tileentity;
 
 import com.irar.arkiatech.Ref;
+import com.irar.arkiatech.config.ConfigInts;
 import com.irar.arkiatech.gui.container.ContainerGrinder;
 import com.irar.arkiatech.handlers.ATItems;
 import com.irar.arkiatech.recipe.GrinderRecipe;
@@ -33,7 +34,7 @@ public class TileGrinder extends TileMachineBase{
 	private GrinderRecipe currentRecipe;
 
 	public TileGrinder() {
-		super(3, 100000, 2048, 0, ATTEGui.GRINDER);
+		super(3, ConfigInts.MAX_GRINDER_ENERGY.currentValue, 2048, 0, ATTEGui.GRINDER);
 	}
 
 	@Override

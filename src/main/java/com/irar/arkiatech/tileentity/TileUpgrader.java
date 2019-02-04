@@ -3,6 +3,7 @@ package com.irar.arkiatech.tileentity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.irar.arkiatech.config.ConfigInts;
 import com.irar.arkiatech.recipe.GrinderRecipe;
 import com.irar.arkiatech.recipe.GrinderRecipes;
 import com.irar.arkiatech.recipe.UpgraderRecipe;
@@ -25,7 +26,7 @@ public class TileUpgrader extends TileMachineBase{
 	private int currentProcessTime = 0;
 	
 	public TileUpgrader() {
-		super(11, 100000, 2048, 0, ATTEGui.UPGRADER);
+		super(11, ConfigInts.MAX_UPGRADER_ENERGY.currentValue, 2048, 0, ATTEGui.UPGRADER);
 		crInv = new UpgraderCraftingInventory(5, this);
 	}
 

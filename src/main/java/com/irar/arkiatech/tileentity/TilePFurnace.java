@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import com.irar.arkiatech.config.ConfigInts;
 import com.irar.arkiatech.handlers.ATItems;
 import com.irar.arkiatech.recipe.GrinderRecipe;
 import com.irar.arkiatech.recipe.GrinderRecipes;
@@ -25,7 +26,7 @@ public class TilePFurnace extends TileMachineBase {
 	private static Set<Entry<ItemStack, ItemStack>> allRecipes = FurnaceRecipes.instance().getSmeltingList().entrySet();
 
 	public TilePFurnace(ATTEGui tileATTE, int numFurnaces) {
-		super(numFurnaces * 2, 100000, 2048, 0, tileATTE);
+		super(numFurnaces * 2, ConfigInts.MAX_FURNACE_ENERGY.currentValue, 2048, 0, tileATTE);
 		this.numFurnaces = numFurnaces;
 		furnaceProgresses = NonNullList.<Integer>withSize(numFurnaces, 0);
 		currentRecipes = new ArrayList<>();

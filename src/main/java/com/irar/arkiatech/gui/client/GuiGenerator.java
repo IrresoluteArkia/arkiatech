@@ -35,7 +35,7 @@ public class GuiGenerator extends GuiBase<TileGenerator>{
 	public List<String> getItemToolTip(ItemStack stack){
 		List<String> toolTip = super.getItemToolTip(stack);
 		if(TileEntityFurnace.isItemFuel(stack)) {
-			int burnTime = TileEntityFurnace.getItemBurnTime(stack);
+			int burnTime = te.getBurnTime(stack);
 			int energyProduce = te.getEnergyProducedPerTick();
 			toolTip.add(TextFormatting.GRAY + "Will generate " + TextFormatting.WHITE + TextFormatting.BOLD + (burnTime * energyProduce) + " RF" + TextFormatting.RESET + TextFormatting.GRAY + " at " + energyProduce + " RF/t" + TextFormatting.WHITE);
 		}

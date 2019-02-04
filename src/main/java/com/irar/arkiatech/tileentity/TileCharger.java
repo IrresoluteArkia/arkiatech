@@ -3,6 +3,7 @@ package com.irar.arkiatech.tileentity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.irar.arkiatech.config.ConfigInts;
 import com.irar.arkiatech.item.ATEnergyItem;
 
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,7 @@ import net.minecraftforge.energy.IEnergyStorage;
 public class TileCharger extends TileMachineBase{
 
 	public TileCharger() {
-		super(4, 100000, 8192, 2048, ATTEGui.CHARGER);
+		super(4, ConfigInts.MAX_CHARGER_ENERGY.currentValue, 8192, 2048, ATTEGui.CHARGER);
 	}
 
 	@Override
