@@ -88,7 +88,7 @@ public class TilePFurnace extends TileMachineBase {
 
 	@Override
 	public int getBaseEnergyUsedPerTick() {
-		return 20;
+		return ConfigInts.FURNACE_ENERGY_USED.currentValue;
 	}
 
 	@Override
@@ -198,7 +198,7 @@ public class TilePFurnace extends TileMachineBase {
 
 	@Override
 	public int getBaseProcessingTime(int i) {
-		return 100;
+		return ConfigInts.FURNACE_PROCESS_TIME.currentValue;
 	}
 
 }

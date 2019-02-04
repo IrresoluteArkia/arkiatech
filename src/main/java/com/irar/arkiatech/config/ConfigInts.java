@@ -11,7 +11,10 @@ public enum ConfigInts {
 	GRINDER_DRIFT_USED("GrinderDriftUsed", "DriftUsed", 35, 1, Integer.MAX_VALUE, "Drift used per integrator operation"),
 	DRIFT_PER_ITEM("DriftPerItem", "Items", 100, 1, Integer.MAX_VALUE, "Drift per item of Zephyrian Drift"),
 	GRINDER_ENERGY_USED("GrinderEnergyUsed", "EnergyUsed", 20, 1, Integer.MAX_VALUE / 20, "Base energy used by an integrator each tick"),
-	GRINDER_PROCESS_TIME("GrinderProcessTime", "ProcessTime", 200, 1, Integer.MAX_VALUE, "Base processing time of an integrator (in ticks)")
+	FURNACE_ENERGY_USED("FurnaceEnergyUsed", "EnergyUsed", 20, 1, Integer.MAX_VALUE / 20, "Base energy used by a powered furnace each tick"),
+	GRINDER_PROCESS_TIME("GrinderProcessTime", "ProcessTime", 200, 1, Integer.MAX_VALUE, "Base processing time of an integrator (in ticks)"),
+	FURNACE_PROCESS_TIME("FurnaceProcessTime", "ProcessTime", 100, 1, Integer.MAX_VALUE, "Base processing time of a powered furnace (in ticks)"),
+	BASIC_FURNACE_NUM("BasicFurnaceNum", "FurnaceNum", 1, 1, 3, "Number of furnaces per basic powered furnace")
 	;
 
 	public final String name;
