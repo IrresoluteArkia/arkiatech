@@ -209,7 +209,7 @@ public class TileGrinder extends TileMachineBase{
 	}
 	
 	public int getMaxDrift() {
-		return 10000;
+		return ConfigInts.MAX_GRINDER_DRIFT.currentValue;
 	}
 
 	public int getCurrentDriftLevel() {
@@ -217,11 +217,11 @@ public class TileGrinder extends TileMachineBase{
 	}
 	
 	public int getDriftPerDriftItem() {
-		return 100;
+		return ConfigInts.DRIFT_PER_ITEM.currentValue;
 	}
 	
 	public int getDriftUsedPerOperation() {
-		return 35;
+		return ConfigInts.GRINDER_DRIFT_USED.currentValue;
 	}
 
 	public int getMaxEnergyStored() {
@@ -230,7 +230,7 @@ public class TileGrinder extends TileMachineBase{
 
 	@Override
 	public int getBaseEnergyUsedPerTick() {
-		return 20;
+		return ConfigInts.GRINDER_ENERGY_USED.currentValue;
 	}
 
 	public static String getDisplayName_() {
@@ -242,7 +242,7 @@ public class TileGrinder extends TileMachineBase{
 	 */
 	@Override
 	public int getBaseProcessingTime(int i) {
-		return 200;
+		return ConfigInts.GRINDER_PROCESS_TIME.currentValue;
 	}
 
 }

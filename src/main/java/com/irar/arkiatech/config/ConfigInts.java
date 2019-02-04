@@ -6,7 +6,12 @@ public enum ConfigInts {
 	MAX_GRINDER_ENERGY("MaxGrinderEnergy", "MaxEnergy", 100000, 1, Integer.MAX_VALUE, "Maximum energy that can be stored in an integrator"),
 	MAX_FURNACE_ENERGY("MaxFurnaceEnergy", "MaxEnergy", 100000, 1, Integer.MAX_VALUE, "Maximum energy that can be stored in a powered furnace"),
 	MAX_UPGRADER_ENERGY("MaxUpgraderEnergy", "MaxEnergy", 100000, 1, Integer.MAX_VALUE, "Maximum energy that can be stored in a restructurer"),
-	GENERATOR_ENERGY_PRODUCED("GeneratorEnergyProduced", "EnergyProduced", 40, 1, Integer.MAX_VALUE / 20, "Energy produced by a generator each tick")
+	GENERATOR_ENERGY_PRODUCED("GeneratorEnergyProduced", "EnergyProduced", 40, 1, Integer.MAX_VALUE / 20, "Energy produced by a generator each tick"),
+	MAX_GRINDER_DRIFT("MaxGrinderDrift", "MaxDrift", 10000, 100, Integer.MAX_VALUE, "Maximum drift that can be stored in an integrator"),
+	GRINDER_DRIFT_USED("GrinderDriftUsed", "DriftUsed", 35, 1, Integer.MAX_VALUE, "Drift used per integrator operation"),
+	DRIFT_PER_ITEM("DriftPerItem", "Items", 100, 1, Integer.MAX_VALUE, "Drift per item of Zephyrian Drift"),
+	GRINDER_ENERGY_USED("GrinderEnergyUsed", "EnergyUsed", 20, 1, Integer.MAX_VALUE / 20, "Base energy used by an integrator each tick"),
+	GRINDER_PROCESS_TIME("GrinderProcessTime", "ProcessTime", 200, 1, Integer.MAX_VALUE, "Base processing time of an integrator (in ticks)")
 	;
 
 	public final String name;
