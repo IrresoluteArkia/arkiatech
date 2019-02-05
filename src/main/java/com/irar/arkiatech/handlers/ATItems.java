@@ -10,7 +10,9 @@ import com.irar.arkiatech.item.ATItemBase;
 import com.irar.arkiatech.item.ATMachineUpgrade;
 import com.irar.arkiatech.item.ATMagnet;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -70,8 +72,8 @@ public class ATItems {
 		upDiamond = new ATItemBase("up_diamond");
 		upEmerald = new ATItemBase("up_emerald");
 		coZephyr = new ATItemBase("co_zephyr");
-		upgradeEnergy = new ATMachineUpgrade("upgrade_energy");
-		upgradeSpeed = new ATMachineUpgrade("upgrade_speed");
+		upgradeEnergy = new ATMachineUpgrade("upgrade_energy", 51200);
+		upgradeSpeed = new ATMachineUpgrade("upgrade_speed", 13107200);
 		battery = new ATEnergyItem("battery", 1000000);
 		drill = new ATDrill("drill");
 		magnet = new ATMagnet("magnet");
@@ -140,6 +142,18 @@ public class ATItems {
 			return itemDict.get(name);
 		}
 		return null;
+	}
+
+	public static void registerItemColors() {
+		for(Item item : allItems) {
+			registerItemColor(item);
+		}
+	}
+
+	private static void registerItemColor(Item item) {
+		if(item instanceof IItemColor) {
+			Minecraft.getMinecraft().getItemColors().registerItemColorHandler((IItemColor) item, item);
+		}
 	}
 
 }
