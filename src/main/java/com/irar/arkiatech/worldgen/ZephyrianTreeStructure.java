@@ -1,5 +1,6 @@
 package com.irar.arkiatech.worldgen;
 
+import java.util.Map;
 import java.util.Random;
 
 import com.irar.arkiatech.Ref;
@@ -43,8 +44,7 @@ public class ZephyrianTreeStructure extends WorldGenerator{
 					.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
 					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 			
-			template.getDataBlocks(position, placementsettings);
-			template.addBlocksToWorld(world, position.add(-6, 0, -5), placementsettings);
+			template.addBlocksToWorld(world, position.add(-6, 0, -5), new ZephyrianTreeManager(), placementsettings, 2);
 			return true;
 		}
 		
@@ -71,8 +71,7 @@ public class ZephyrianTreeStructure extends WorldGenerator{
 					.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
 					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 			
-			template.getDataBlocks(position, placementsettings);
-			template.addBlocksToWorld(world, position.add(-6, 0, -5), placementsettings);
+			template.addBlocksToWorld(world, position.add(-6, 0, -5), new ZephyrianTreeManager(), placementsettings, 2);
 			return true;
 //		}
 		
