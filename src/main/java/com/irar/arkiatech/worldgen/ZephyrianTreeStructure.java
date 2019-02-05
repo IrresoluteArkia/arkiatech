@@ -36,13 +36,13 @@ public class ZephyrianTreeStructure extends WorldGenerator{
 			return false;
 		}
 		
-		if(WorldGenZephyrianTree.canSpawnHere(template, worldserver, position)) {
+		PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE/*values()[rand.nextInt(Mirror.values().length)]*/)
+				.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
+				.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
+		
+		if(WorldGenZephyrianTree.canSpawnHere(template, worldserver, position, new BlockPos(-6, 0, -5), placementsettings, false)) {
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
-			
-			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE/*values()[rand.nextInt(Mirror.values().length)]*/)
-					.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
-					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
 			
 			template.addBlocksToWorld(world, position.add(-6, 0, -5), new ZephyrianTreeManager(), placementsettings, 2);
 			return true;
@@ -63,19 +63,19 @@ public class ZephyrianTreeStructure extends WorldGenerator{
 			return false;
 		}
 		
-//		if(WorldGenZephyrianTree.canSpawnHere(template, worldserver, position)) {
+		PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE/*values()[rand.nextInt(Mirror.values().length)]*/)
+				.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
+				.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
+
+		if(WorldGenZephyrianTree.canSpawnHere(template, worldserver, position, new BlockPos(-6, 0, -5), placementsettings, true)) {
 			IBlockState iblockstate = world.getBlockState(position);
 			world.notifyBlockUpdate(position, iblockstate, iblockstate, 3);
 			
-			PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE/*values()[rand.nextInt(Mirror.values().length)]*/)
-					.setRotation(Rotation.NONE/*values()[rand.nextInt(Rotation.values().length)]*/).setIgnoreEntities(false).setChunk((ChunkPos) null)
-					.setReplacedBlock((Block) null).setIgnoreStructureBlock(false);
-			
 			template.addBlocksToWorld(world, position.add(-6, 0, -5), new ZephyrianTreeManager(), placementsettings, 2);
 			return true;
-//		}
+		}
 		
-//		return false;
+		return false;
 	}
 	
 }

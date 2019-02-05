@@ -1,10 +1,15 @@
 package com.irar.arkiatech.worldgen;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import com.irar.arkiatech.handlers.ATBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -15,8 +20,12 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.gen.structure.template.ITemplateProcessor;
+import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
+import net.minecraft.world.gen.structure.template.Template.BlockInfo;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import scala.actors.threadpool.Arrays;
 
 public class WorldGenZephyrianTree extends WorldGenerator implements IWorldGenerator
 {
@@ -63,10 +72,39 @@ public class WorldGenZephyrianTree extends WorldGenerator implements IWorldGener
 		}
 	}
 
-	public static boolean canSpawnHere(Template template, WorldServer worldserver, BlockPos position) {
+	public static boolean canSpawnHere(Template template, WorldServer worldserver, BlockPos position, BlockPos modifier, PlacementSettings placementsettings, boolean checkAllBlocks) {
 		IBlockState state = worldserver.getBlockState(position.add(0, -1, 0));
 		Block block = state.getBlock();
-		boolean condition = block.equals(Blocks.GRASS);
-		return condition;
+		Block[] allowedSoil = new Block[] {Blocks.GRASS, Blocks.DIRT};
+		boolean condition2 = true;
+		if(checkAllBlocks) {
+			SpawnChecker sc = new SpawnChecker();
+			template.addBlocksToWorld(worldserver, position.add(modifier), sc, placementsettings, 2);
+			condition2 = sc.condition;
+		}
+		boolean condition = Arrays.asList(allowedSoil).contains(block);
+		return condition2 && condition;
+	}
+	
+	private static class SpawnChecker implements ITemplateProcessor{
+		
+		boolean condition = true;
+		private ZephyrianTreeManager ztm;
+		
+		public SpawnChecker() {
+			ztm = new ZephyrianTreeManager();
+		}
+
+		@Override
+		public BlockInfo processBlock(World worldIn, BlockPos pos, BlockInfo blockInfoIn) {
+			if(blockInfoIn.blockState.getBlock() instanceof BlockLog) {
+				IBlockState state2 = worldIn.getBlockState(pos);
+				if(!(state2.getBlock() instanceof BlockLog) && ztm.processBlock(worldIn, pos, blockInfoIn) == null) {
+					condition = false;
+				}
+			}
+			return null;
+		}
+		
 	}
 }
