@@ -108,6 +108,9 @@ public class TileGrinder extends TileMachineBase{
 			}
 			return false;
 		}else {
+			if(itemStackIn.getItem().equals(ATItems.zeDrift)) {
+				return false;
+			}
 			return true;
 		}
 	}
