@@ -56,7 +56,7 @@ public class TileItemSource extends TileBase{
 			ItemStack stack = source.getStackInSlot(i);
 			if(!stack.isEmpty()) {
 				for(IItemAcceptor acceptor : acceptors) {
-					if(acceptor.canAccept(stack)) {
+					if(acceptor.canAccept(source, stack)) {
 						source.setInventorySlotContents(i, acceptor.accept(source, source.removeStackFromSlot(i)));
 						sent++;
 						break;
