@@ -1,18 +1,22 @@
 package com.irar.arkiatech.tileentity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.irar.arkiatech.util.ItemPipeHelper;
 
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 
 public class TileItemSource extends TileBase{
 
 	public IInventory source = null;
+	public BlockPos sourceLoc = null;
 	private boolean shouldSearch = true;
 	List<IItemAcceptor> acceptors = new ArrayList<>();
 	
@@ -54,6 +58,12 @@ public class TileItemSource extends TileBase{
 		int sent = 0;
 		for(int i = 0; i < source.getSizeInventory(); i++) {
 			ItemStack stack = source.getStackInSlot(i);
+			if(source instanceof ISidedInventory) {
+				ISidedInventory sSource = (ISidedInventory) source;
+				if(!sSource.canExtractItem(i, stack, getFacing(pos, sourceLoc))) {
+					continue;
+				}
+			}
 			if(!stack.isEmpty()) {
 				for(IItemAcceptor acceptor : acceptors) {
 					if(acceptor.canAccept(source, stack)) {
@@ -75,9 +85,10 @@ public class TileItemSource extends TileBase{
 
 	private boolean findSource() {
 		BlockPos[] neighbors = ItemPipeHelper.getNeighborLocations(pos);
-		IInventory[] invs = ItemPipeHelper.getInventoriesAtLocs(world, neighbors);
-		if(invs.length > 0) {
-			source = invs[0];
+		HashMap<IInventory, BlockPos> invs = ItemPipeHelper.getMapInventoriesAtLocs(world, neighbors);
+		if(invs.size() > 0) {
+			source = invs.keySet().toArray(new IInventory[0])[0];
+			sourceLoc = invs.values().toArray(new BlockPos[0])[0];
 			return true;
 		}
 		return false;
@@ -87,6 +98,11 @@ public class TileItemSource extends TileBase{
 	
 	public void setShouldSearch(boolean b) {
 		shouldSearch  = b;
+	}
+	
+	public EnumFacing getFacing(BlockPos pos1, BlockPos pos2) {
+		BlockPos dif = pos1.subtract(pos2);
+		return EnumFacing.getFacingFromVector(dif.getX(), dif.getY(), dif.getZ());
 	}
 	
 }
