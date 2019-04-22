@@ -1,0 +1,32 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "particle": "#texture"
+    },
+    "elements": [
+        {
+            "from": [0,5,5],
+            "to": [16,11,11],
+            "faces": {
+                "up": {
+                    "texture": "#texture"
+                },
+                "down": {
+                    "texture": "#texture"
+                },
+                "west": {
+                    "texture": "#texture"
+                },
+                "east": {
+                    "texture": "#texture"
+                },
+                "north": {
+                    "texture": "#texture"
+                },
+                "south": {
+                    "texture": "#texture"
+                }
+            }
+        }
+    ]
+}
