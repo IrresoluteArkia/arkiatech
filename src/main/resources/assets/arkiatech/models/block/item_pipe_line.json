@@ -1,0 +1,6 @@
+{
+    "parent": "arkiatech:block/pipe_line",
+    "textures": {
+        "texture": "arkiatech:blocks/item_cable"
+    }
+}

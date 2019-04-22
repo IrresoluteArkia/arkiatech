@@ -3,6 +3,7 @@ package com.irar.arkiatech.proxy;
 import com.irar.arkiatech.block.ATEnergyPipe;
 import com.irar.arkiatech.block.ATLeaf;
 import com.irar.arkiatech.block.ATSapling;
+import com.irar.arkiatech.block.ICustomBoundingBox;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemBlock;
@@ -24,10 +25,10 @@ public class MainEventHandler {
 			BlockPos blockpos = e.getTarget().getBlockPos();
 			World world = e.getPlayer().world;
 			IBlockState state = world.getBlockState(blockpos);
-			if(state.getBlock() instanceof ATEnergyPipe) {
+			if(state.getBlock() instanceof ICustomBoundingBox) {
 				state = state.getActualState(world, blockpos);
-				ATEnergyPipe pipe = (ATEnergyPipe) state.getBlock();
-				for(AxisAlignedBB aabb : ((ATEnergyPipe) state.getBlock()).getCollisionBoxes(state)) {
+				ICustomBoundingBox pipe = (ICustomBoundingBox) state.getBlock();
+				for(AxisAlignedBB aabb : pipe.getCollisionBoxes(state)) {
 					pipe.setBoundingBox(aabb);
 					e.getContext().drawSelectionBox(e.getPlayer(), e.getTarget(), 0, e.getPartialTicks());
 				}

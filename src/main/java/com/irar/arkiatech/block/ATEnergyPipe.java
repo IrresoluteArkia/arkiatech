@@ -27,7 +27,7 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ATEnergyPipe extends ATContainerBlockBase{
+public class ATEnergyPipe extends ATContainerBlockBase implements ICustomBoundingBox{
 
     /** Whether this pipe connects in the northern direction */
     public static final PropertyBool NORTH = PropertyBool.create("north");

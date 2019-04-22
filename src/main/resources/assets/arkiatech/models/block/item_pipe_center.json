@@ -1,0 +1,6 @@
+{
+    "parent": "arkiatech:block/pipe_center",
+    "textures": {
+        "texture": "arkiatech:blocks/item_cable"
+    }
+}

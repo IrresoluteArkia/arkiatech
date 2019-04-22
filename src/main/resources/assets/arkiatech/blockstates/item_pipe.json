@@ -1,0 +1,23 @@
+{
+    "multipart": [
+       {   "apply": { "model": "arkiatech:item_pipe_center" }},
+       {   "when": { "north": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line", "y": 180}
+       },
+       {   "when": { "east": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line", "y": 270}
+       },
+       {   "when": { "south": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line"}
+       },
+       {   "when": { "west": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line", "y": 90}
+       },
+       {   "when": { "up": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line", "x": 90}
+       },
+       {   "when": { "down": "true" },
+           "apply": { "model": "arkiatech:item_pipe_line", "x": 270}
+       }
+   ]
+}
