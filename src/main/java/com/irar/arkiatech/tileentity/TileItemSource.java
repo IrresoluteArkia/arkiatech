@@ -19,6 +19,7 @@ public class TileItemSource extends TileBase{
 	public BlockPos sourceLoc = null;
 	private boolean shouldSearch = true;
 	List<IItemAcceptor> acceptors = new ArrayList<>();
+	int curslot = 0;
 	
 	@Override
 	public void update() {
@@ -30,6 +31,7 @@ public class TileItemSource extends TileBase{
 				// Failed
 				return;
 			}
+			curslot = 0;
 		}
 		
 		// Found valid source
@@ -52,22 +54,24 @@ public class TileItemSource extends TileBase{
 	 * @param numToSend
 	 */
 	private void sendItemStacks(int numToSend) {
+		int ls = curslot;
 		if(numToSend <= 0) {
 			return;
 		}
 		int sent = 0;
-		for(int i = 0; i < source.getSizeInventory(); i++) {
-			ItemStack stack = source.getStackInSlot(i);
+		for(int i = 0; i < numToSend; i++) {
+			ls = curslot;
+			ItemStack stack = source.getStackInSlot(curslot);
 			if(source instanceof ISidedInventory) {
 				ISidedInventory sSource = (ISidedInventory) source;
-				if(!sSource.canExtractItem(i, stack, getFacing(pos, sourceLoc))) {
+				if(!sSource.canExtractItem(curslot, stack, getFacing(pos, sourceLoc))) {
 					continue;
 				}
 			}
 			if(!stack.isEmpty()) {
 				for(IItemAcceptor acceptor : acceptors) {
 					if(acceptor.canAccept(source, stack)) {
-						source.setInventorySlotContents(i, acceptor.accept(source, source.removeStackFromSlot(i)));
+						source.setInventorySlotContents(curslot, acceptor.accept(source, source.removeStackFromSlot(curslot)));
 						sent++;
 						break;
 					}
@@ -75,6 +79,16 @@ public class TileItemSource extends TileBase{
 			}
 			if(sent >= numToSend) {
 				break;
+			}
+			curslot++;
+			if(curslot == source.getSizeInventory()) {
+				curslot = 0;
+			}
+		}
+		if(ls == curslot) {
+			curslot++;
+			if(curslot == source.getSizeInventory()) {
+				curslot = 0;
 			}
 		}
 	}
