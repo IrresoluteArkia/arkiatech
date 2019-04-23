@@ -72,11 +72,11 @@ public class GuiBase<T extends TileMachineBase> extends GuiContainer{
         	int x = energyDisplayArea[0];
         	int y = energyDisplayArea[1];
         	int height = energyDisplayArea[2];
-        	int width = 6;
+        	int width = 10;
         	int borderSize = 1;
         	
         	int guiSheetX1 = 0;
-        	int guiSheetX2 = 6;
+        	int guiSheetX2 = 10;
             this.drawTexturedModalRect(this.guiLeft + x, this.guiTop + y, guiSheetX1, 0, width, height);
         	int energyLevel = this.getEnergyAmountScaled(height - borderSize * 2);
             this.drawTexturedModalRect(this.guiLeft + x + borderSize, this.guiTop + y + borderSize + (height - borderSize * 2 - energyLevel), guiSheetX2, 0, width - borderSize * 2, energyLevel);
@@ -102,7 +102,7 @@ public class GuiBase<T extends TileMachineBase> extends GuiContainer{
         for(int[] energyDisplayArea : this.energyDisplayAreas) {
         	int x = energyDisplayArea[0];
         	int y = energyDisplayArea[1];
-        	int width = 6;
+        	int width = 10;
         	int height = energyDisplayArea[2];
         	if(isMouseIn(mouseX, mouseY, x, y, width, height)) {
         		renderEnergyToolTip(mouseX, mouseY);
