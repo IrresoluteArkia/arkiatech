@@ -5,9 +5,12 @@ import com.irar.arkiatech.tileentity.ATEnergyStorage;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing.Axis;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -52,6 +55,7 @@ public class ATDrill extends ATEnergyItem {
 		return baseEnergyUse;
 	}
 	
+//	private boolean destroying = false;
 	@Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
     {
@@ -59,7 +63,44 @@ public class ATDrill extends ATEnergyItem {
 		if(storage != null) {
 			storage.useEnergy(this.getEnergyUsePerBlock(stack));
 		}
+//		if(!destroying) {
+//			destroying = true;
+//			if(entityLiving instanceof EntityPlayerMP) {
+//				EntityPlayerMP player = (EntityPlayerMP) entityLiving;
+//				int radius = this.getDrillRadius(stack);
+//				int size = radius*2-1;
+//				for(int i = radius-size; i <= size-radius; i++) {
+//					for(int j = radius-size; j <= size-radius; j++) {
+//						BlockPos newPos;
+////						if(e.getTarget().sideHit.getAxis().equals(Axis.X)) {
+//							newPos = pos.add(new BlockPos(0, i, j));
+////						}else if(e.getTarget().sideHit.getAxis().equals(Axis.Y)) {
+////							newPos = pos.add(new BlockPos(i, 0, j));
+////						}else {
+////							newPos = pos.add(new BlockPos(i, j, 0));
+////						}
+//						if(i == 0 && j == 0) {
+//							continue;
+//						}
+//						if(!ATDrill.canTargetSpot(player, stack, worldIn, newPos)) {
+//							continue;
+//						}
+//						player.interactionManager.tryHarvestBlock(newPos);
+//					}
+//				}
+//			}
+//			destroying = false;
+//		}
         return true;
     }
+
+	public static int getDrillRadius(ItemStack stack) {
+		//TODO
+		return 2;
+	}
+
+	public static boolean canTargetSpot(EntityPlayer player, ItemStack stack, World world, BlockPos pos) {
+		return stack.getStrVsBlock(world.getBlockState(pos)) == efficiencyOnProperMaterial;
+	}
 
 }
