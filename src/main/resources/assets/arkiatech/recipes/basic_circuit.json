@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "zpz",
+        "zcz",
+        "mzl"
+    ],
+    "key":
+    {
+        "z":
+        {
+            "item": "arkiatech:zephyrian_drift"
+        },
+        "p":
+        {
+            "item": "arkiatech:pulse"
+        },
+        "c":
+        {
+            "item": "arkiatech:basic_circuit_core"
+        },
+        "m":
+        {
+            "item": "arkiatech:moeru"
+        },
+        "l":
+        {
+            "item": "arkiatech:luki"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:basic_circuit",
+        "count": 1
+    }
+}

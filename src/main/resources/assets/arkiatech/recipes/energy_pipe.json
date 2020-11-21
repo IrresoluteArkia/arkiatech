@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "zzz",
+        "ppp",
+        "zzz"
+    ],
+    "key":
+    {
+        "z":
+        {
+            "item": "arkiatech:zephyr_ingot"
+        },
+        "p":
+        {
+            "item": "arkiatech:pulse"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:energy_pipe",
+        "count": 6
+    }
+}

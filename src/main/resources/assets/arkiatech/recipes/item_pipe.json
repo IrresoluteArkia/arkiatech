@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "zzz",
+        "lll",
+        "zzz"
+    ],
+    "key":
+    {
+        "z":
+        {
+            "item": "arkiatech:zephyr_ingot"
+        },
+        "l":
+        {
+            "item": "arkiatech:luki"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:item_pipe",
+        "count": 6
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "mem",
+        "ece",
+        "mem"
+    ],
+    "key":
+    {
+        "m":
+        {
+            "item": "arkiatech:moeru"
+        },
+        "e":
+        {
+            "item": "arkiatech:up_emerald"
+        },
+        "c":
+        {
+            "item": "arkiatech:basic_circuit"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:upgrade_speed",
+        "count": 1
+    }
+}

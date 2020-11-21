@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "pip",
+        "ici",
+        "pip"
+    ],
+    "key":
+    {
+        "p":
+        {
+            "item": "arkiatech:pulse"
+        },
+        "i":
+        {
+            "item": "arkiatech:up_iron"
+        },
+        "c":
+        {
+            "item": "arkiatech:basic_circuit"
+        }
+    },
+    "result":
+    {
+        "item": "arkiatech:upgrade_energy",
+        "count": 1
+    }
+}
