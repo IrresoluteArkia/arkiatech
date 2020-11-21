@@ -40,6 +40,9 @@ public class ATItems {
 	public static Item upDiamond;
 	public static Item upEmerald;
 	public static Item coZephyr;
+	public static Item pulse;
+	public static Item moeru;
+	public static Item luki;
 	public static Item upgradeEnergy;
 	public static Item upgradeSpeed;
 	public static Item battery;
@@ -72,6 +75,9 @@ public class ATItems {
 		upDiamond = new ATItemBase("up_diamond");
 		upEmerald = new ATItemBase("up_emerald");
 		coZephyr = new ATItemBase("co_zephyr");
+		pulse = new ATItemBase("pulse");
+		moeru = new ATItemBase("moeru");
+		luki = new ATItemBase("luki");
 		upgradeEnergy = new ATMachineUpgrade("upgrade_energy", 51200);
 		upgradeSpeed = new ATMachineUpgrade("upgrade_speed", 13107200);
 		battery = new ATEnergyItem("battery", 1000000);
@@ -101,6 +107,9 @@ public class ATItems {
 		allItems.add(upDiamond);
 		allItems.add(upEmerald);
 		allItems.add(coZephyr);
+		allItems.add(pulse);
+		allItems.add(moeru);
+		allItems.add(luki);
 		allItems.add(upgradeEnergy);
 		allItems.add(upgradeSpeed);
 		allItems.add(battery);
